@@ -1,0 +1,60 @@
+.header {
+    /* background-color: #fff; */
+    padding: 10px 0;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navs a{
+    margin-left: 20px;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 3px;
+    transition: .5s;
+}
+
+.navs a.active {
+    background-color: #fff;
+    color: #42b773;
+}
+
+.navs a:hover {
+    background-color: #fff;
+    color: #42b773;
+}
+
+.home {
+    background-image: url('../../images/backgrounds/slider.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.home-content {
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 25% 0 20%;
+    line-height: 1.5;
+}
+
+.home-content h3 {
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.home-content h2 {
+    font-size: 42px;
+    font-weight: 500;
+}

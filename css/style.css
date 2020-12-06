@@ -1,0 +1,87 @@
+/*
+ 
+ .className - class
+ #idName - id
+
+*/
+
+.test {
+	width: 200px;
+	height: 200px;
+	background-color: lightblue;
+
+	border-width: 15px;
+	border-style: solid;
+	border-color: tomato;
+
+	border-top-width: 15px;
+	border-top-style: dashed;
+	border-top-color: lime;
+
+	border-right: 15px dotted blue;
+
+	border-bottom: 15px double green;
+
+	border: 20px solid black;
+
+
+	border-radius: 30px 10px 70px 100px;
+
+}
+
+p {
+	width: 400px;
+}
+
+.parent {
+	width: 600px;
+	height: 400px;
+	border: 5px solid red;
+
+	position: relative;
+}
+
+
+.child {
+	width: 200px;
+	height: 200px;
+	border: 5px solid green;
+
+	position: absolute;
+
+	top: 20%;
+	right: 40%;
+}
+
+.fixed {
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	border-radius: 50%;
+
+	position: fixed;
+	top: 0;
+	right: 0;
+
+}
+
+.second {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+
+	background-color: red;
+
+	top: 25%;
+	right: 30%;
+
+	border-color: blue;
+
+	z-index: -1;
+
+}
+
+/* top, right, bottom, left, z-index - relative, absolute, fixed */
+
+
+
