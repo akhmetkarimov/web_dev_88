@@ -1,11 +1,12 @@
 .header {
-    /* background-color: #fff; */
+    background-color: #fff;
     padding: 10px 0;
 
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
+    z-index: 10;
 }
 
 .header-inner {
@@ -38,14 +39,53 @@
     background-image: url('../../images/backgrounds/slider.jpg');
     background-size: cover;
     background-position: bottom;
+    position: relative;
+    z-index: 1;
 }
+
+.home::after {
+    content: ' ';
+    width: 157px;
+    height: 68px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../../images/widgets/add-w.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-link{
+    width: 157px;
+    height: 68px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 22px;
+    color: #42b773;
+    transition: .5s;
+}
+
+.home-link:hover {
+    transform: translateY(10%);
+}
+
 
 .home-content {
     color: #fff;
     text-align: center;
     width: 80%;
     margin: 0 auto;
-    padding: 25% 0 20%;
+    padding: 20% 0;
     line-height: 1.5;
 }
 
