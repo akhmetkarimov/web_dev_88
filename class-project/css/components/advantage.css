@@ -1,0 +1,51 @@
+.template-item.advantage-item {
+    width: calc(100% / 2 - 3%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.advantage-circle {
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(101, 137, 151, 0.33);
+    color: rgba(101, 137, 151, 0.33);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+
+    transition: .5s;
+}
+
+.advantage-item:hover .advantage-circle{
+    background-color: #a9dc56;
+    color: #fff;
+    border-color: #a9dc56;
+}
+
+.advantage-block{
+    width: 70%;
+    line-height: 1.5;
+}
+
+.advantage-block a {
+    display: block;
+    color: #42b773;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    transition: .5s;
+}
+
+.advantage-block a:hover {
+    text-decoration: underline;
+    color: #42464f;
+}
+
+.advantage-block p {
+    color: #42464f;
+    font-size: 14px;
+}

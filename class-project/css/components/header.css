@@ -74,6 +74,9 @@
     color: #42b773;
     transition: .5s;
 }
+.home-link.home-top {
+    top: 0;
+}
 
 .home-link:hover {
     transform: translateY(10%);
