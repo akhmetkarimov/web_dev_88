@@ -3,6 +3,11 @@
     margin: 0 auto;
 }
 
+.container-padding {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+}
+
 .contact-btn {
     background: linear-gradient(to right, #42b773 0%, #a9dc56 100%);
     font-size: 20px;
@@ -56,4 +61,41 @@
     width: 30%;
     height: 2px;
     margin: 20px auto;
+}
+
+
+.section-padding.container-padding {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+
+.section-top-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.main-service .section-top-title {
+    color: #42454f;
+    margin-top: 50px;
+}
+
+.black {
+    color: #42454f;
+}
+
+.gallery-inner, .video-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: .5s;
 }

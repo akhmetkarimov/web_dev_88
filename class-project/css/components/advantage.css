@@ -1,3 +1,7 @@
+.main-advantages {
+    position: relative;
+}
+
 .template-item.advantage-item {
     width: calc(100% / 2 - 3%);
     display: flex;
@@ -48,4 +52,48 @@
 .advantage-block p {
     color: #42464f;
     font-size: 14px;
+}
+
+.main-advantages::after  {
+    content: ' ';
+    width: 157px;
+    height: 68px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../images/widgets/add-p.png');
+}
+.main-advantages .home-link i{
+    color: #fff;
+}
+
+
+.main-offers {
+    background: linear-gradient(to bottom, #42b773 0%, #a9dc56 100%);
+}
+
+.template-item.offer-item {
+    width: calc(100% / 3 - 3%);
+    line-height: 1.5;
+    color: #fff;
+}
+.offer-item a{
+    display: block;
+    margin: 20px 0;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.offer-item a:hover{
+    color: #42464f;
+    text-decoration: underline;
+}
+.offer-item img{
+    border-radius: 50%;
 }
