@@ -96,4 +96,12 @@
 }
 .offer-item img{
     border-radius: 50%;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .template-item.advantage-item, .template-item.offer-item {
+        width: 100%;
+    }
 }

@@ -174,3 +174,24 @@
     background-size: cover;
     background-position: center;
 }
+
+
+@media(max-width: 768px) {
+    .main-about {
+        flex-wrap: wrap;
+    }
+    .about-block {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .template-item {
+        width: calc(100% / 2 - 3%);
+    }
+}
+
+@media (max-width: 425px) {
+    .template-item {
+        width: 100%;
+    }
+}

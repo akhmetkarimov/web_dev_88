@@ -104,3 +104,15 @@
     position: relative;
     margin: 0;
 }
+
+
+@media (max-width: 768px) {
+    .template-item.gallery-item, .template-item.wrap-item {
+        width: calc(100% / 2);
+    }
+}
+@media (max-width: 425px) {
+    .template-item.gallery-item, .template-item.wrap-item {
+        width:100%;
+    }
+}

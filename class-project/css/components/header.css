@@ -101,3 +101,30 @@
     font-size: 42px;
     font-weight: 500;
 }
+
+.mobile-nav.fas {
+    display: none;
+    cursor: pointer;
+}
+
+@media(max-width: 900px) {
+    .navs {
+        display: none;
+    }
+    .mobile-nav.fas {
+        display: block;
+    }
+    
+}
+
+@media(max-width: 600px) {
+    .home-content h3 {
+        font-size: 25px;
+    }
+    
+    .home-content h2 {
+        font-size: 30px;
+    }
+    
+    
+}
