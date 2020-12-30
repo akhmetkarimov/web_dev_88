@@ -76,10 +76,10 @@ console.log(first, second)
 // let num1 = Number(prompt('Enter number 1'))
 // let num2 = Number(prompt('Enter number 2'))
 
-let num1 = +(prompt('Enter number 1'))
-let num2 = +(prompt('Enter number 2'))
+// let num1 = +(prompt('Enter number 1'))
+// let num2 = +(prompt('Enter number 2'))
 
-console.log('Sum num1 + num2 = ', num1 + num2)
+// console.log('Sum num1 + num2 = ', num1 + num2)
 
 
 // Создайте переменную str и присвойте ей значение 'Привет, Мир!'. Выведите значение этой переменной на экран.
@@ -98,3 +98,37 @@ console.log('Sum num1 + num2 = ', num1 + num2)
 
 
 // Создайте переменные a=10, b=2 и c=5. Выведите на экран их сумму.
+
+
+
+
+
+
+console.log(Math.pow(5, 3))
+console.log(Math.sqrt(81))
+
+console.log(Math.round(1.5))
+console.log(Math.floor(1.9))
+console.log(Math.ceil(1.1))
+
+console.log(Math.max(123,21,3,12,3,4288,12))
+console.log(Math.min(123,21,3,12,3,4288,12))
+
+console.log(Math.abs(-1))
+
+console.log(Math.floor(Math.random() * 100))
+console.log(Math.random() * 100)
+
+
+// a^2 + b^2 = c^2
+
+
+
+
+
+// myFunc()
+// test.myFunc()
+
+
+let result = Math.sqrt(Math.pow(3,2)+Math.pow(4,2))
+console.log(result)
