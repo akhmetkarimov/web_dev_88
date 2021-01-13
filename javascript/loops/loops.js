@@ -112,3 +112,52 @@
 // }
 
 // console.log(counter)
+
+// let str = ''
+
+// for (let i = 7; i >= 1; i--) {
+
+//     for (let k = 7; k >= i; k--){
+//         str += ' '
+//     }
+    
+//     for (let j = 1; j <= 2 * i - 1; j++){
+//         str += '*'
+//     }
+
+//     str += '\n'
+// }
+
+// for (let i = 1; i <= 7; i++) {
+
+//     for (let k = 7; k >= i; k--){
+//         str += ' '
+//     }
+    
+//     for (let j = 1; j <= 2 * i - 1; j++){
+//         str += '*'
+//     }
+
+//     str += '\n'
+// }
+
+// console.log(str)
+
+//           012345
+let input = '2D3C4D'
+let str = ''
+for (let i = 0; i < input.length; i++) {
+    if (i % 2 == 0) {
+        for (let j = 0; j < Number(input[i]); j++){
+            str += input[i + 1]
+        }
+        str += '\n'
+    }    
+}
+console.log(str)
+
+// 2D4B7C
+
+// DD
+// BBBB
+// CCCCCCC
