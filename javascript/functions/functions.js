@@ -6,44 +6,44 @@
 //     body
 // }
 
-test('Gulnar')
+// test('Gulnar')
 
-function test(name) {
-    console.log('Function call', name)
-}
+// function test(name) {
+//     console.log('Function call', name)
+// }
 
-test('Yedil')
-
-
-let arrowTest = () => {
-    console.log('Arrow Function call')
-}
-
-arrowTest()
+// test('Yedil')
 
 
-function printArray(arr) {
-    for (let item of arr) {
-        console.log(item)
-    }    
-}
+// let arrowTest = () => {
+//     console.log('Arrow Function call')
+// }
+
+// arrowTest()
 
 
-let arr = [1, 2, 3, 88, 12]
-let arr1 = [1, 212, 3, 88, 12]
-let arr2 = [1, 2, 3, 88, 12123, 123]
-let arr3 = [1221, 2, 3, 88, 1232]
-let arr4 = [1, 231, 3, 8821312, 12]
+// function printArray(arr) {
+//     for (let item of arr) {
+//         console.log(item)
+//     }    
+// }
 
-printArray(arr)
-console.log('-----')
-printArray(arr1)
-console.log('-----')
-printArray(arr2)
-console.log('-----')
-printArray(arr3)
-console.log('-----')
-printArray(arr4)
+
+// let arr = [1, 2, 3, 88, 12]
+// let arr1 = [1, 212, 3, 88, 12]
+// let arr2 = [1, 2, 3, 88, 12123, 123]
+// let arr3 = [1221, 2, 3, 88, 1232]
+// let arr4 = [1, 231, 3, 8821312, 12]
+
+// printArray(arr)
+// console.log('-----')
+// printArray(arr1)
+// console.log('-----')
+// printArray(arr2)
+// console.log('-----')
+// printArray(arr3)
+// console.log('-----')
+// printArray(arr4)
 
 
 
@@ -85,3 +85,69 @@ function imageOut(){
     
     document.getElementById('outContent').innerHTML += output
 }
+
+
+
+// function sum(n1, n2) {
+//     return n1 + n2
+// }
+
+// let result = sum(20, 45)
+
+// console.log(result)
+
+
+// function printMsg(name) {
+//     return `Welcome ${name} to our class!!!`
+// }
+
+// console.log(printMsg('Yedil'))
+
+
+
+// let globVar = 20
+
+// function testLocal(){
+//     let localVar = 55
+//     globVar = 222
+//     console.log('In local function', globVar)
+//     console.log('In local function', localVar)
+// }
+
+// function testLocal2(){
+//     let localVar = '111111'
+//     console.log('local2 ', localVar)
+// }
+// console.log('Before function', globVar)
+
+// testLocal()
+
+// console.log('After function', globVar)
+
+// testLocal2()
+
+async function printFirst(){
+    setTimeout(function(){
+        console.log('First print')
+    }, 4000)
+}
+
+async function printSecond(){
+    setTimeout(function(){
+        console.log('Second print')
+    }, 2000)
+}
+
+async function printThird(){
+    setTimeout(function(){
+        console.log('Third print')
+    }, 3000)
+}
+
+async function printFourth(){
+    await printFirst()
+    await printSecond()
+    await printThird()
+}
+
+printFourth()
