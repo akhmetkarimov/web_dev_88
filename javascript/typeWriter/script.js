@@ -16,16 +16,23 @@ function printWord() {
         let str = words[wordTurn].substr(0, charTurn)
         output.innerHTML = str
         charTurn += 1
-
         setTimeout(printWord, 150)
     } else {
-        wordTurn += 1
-        charTurn = 0
+        setTimeout(deleteWord, 10)
+    }
+}
 
+function deleteWord() {
+    if (charTurn >= 0) {
+        let str = words[wordTurn].substr(0, charTurn)
+        output.innerHTML = str
+        charTurn -= 1
+        setTimeout(deleteWord, 10)
+    } else {
+        wordTurn += 1
         if (wordTurn >= words.length) {
             wordTurn = 0
         }
-
         setTimeout(printWord, 150)
     }
 }

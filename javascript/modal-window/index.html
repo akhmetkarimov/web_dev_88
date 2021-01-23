@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal - window</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- <button onclick="openModal()">Open Modal Window</button> -->
+
+    <div class="modal">
+        <div class="modal-content">
+            <img src="" alt="" class="modal-img">
+            <button class="close-btn" onclick="closeModal()"> X </button>
+            <button class="prev" onclick="nextImg(-1)"> < </button>
+            <button class="next" onclick="nextImg(+1)"> > </button>
+        </div>
+    </div>
+
+    <img onclick="openImgModal(event)" class="img-item" src="https://media.inquirer.com/storage/inquirer/projects/year-in-pictures-2019/photos/POY2019_RedC.JPG" alt="">
+    <img onclick="openImgModal(event)" class="img-item" src="https://i.pinimg.com/736x/50/df/34/50df34b9e93f30269853b96b09c37e3b.jpg" alt="">
+    <img onclick="openImgModal(event)" class="img-item" src="https://blog.photofeeler.com/wp-content/uploads/2017/09/tinder-photo-size-tinder-picture-size-tinder-aspect-ratio-image-dimensions-crop.jpg" alt="">
+    <img onclick="openImgModal(event)" class="img-item" src="https://www.universetoday.com/wp-content/uploads/2019/07/20190717_ls-2-mexico_f840.jpg" alt="">
+    <script src="modal.js"></script>
+
+
+</body>
+
+</html>
