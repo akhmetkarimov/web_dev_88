@@ -1,0 +1,34 @@
+.tab-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tab-item {
+    width: 47%;
+    border: 2px solid black;
+    margin: 50px 0;
+    height: 350px;
+
+    opacity: 0;
+    transform: scale(0);
+
+    animation-name: changeItem;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+.tab-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+@keyframes changeItem {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
