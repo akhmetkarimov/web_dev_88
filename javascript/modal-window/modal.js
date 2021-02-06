@@ -37,3 +37,10 @@ function showImg(index) {
     modalImg.src = images[index - 1].src
 
 }
+
+
+window.addEventListener('click', function(e){
+    if (e.target == modal) {
+        modal.classList.remove('active')
+    }
+})
