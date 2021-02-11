@@ -4,37 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Detail Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body>
-
-    <form action="save.php" method="POST">
-        <div class="row container">
-            <h2>Save Post</h2>
-
-            <div class="col-8">
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" placeholder="Type your title" name="title">
-                </div>
-            </div>
-
-            <div class="col-8">
-                <div class="mb-3">
-                    <label for="desciption" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" placeholder="Type your description" name="description"></textarea>
-                </div>
-
-            </div>
-
-            <div class="col-6">
-                <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-        </div>
-    </form>
-
 
     <div class="row container mt-5">
         <!-- 
@@ -65,25 +39,22 @@
         <?php
 
         include "database.php";
+        $pid = $_GET['post-id'];
 
-        $postQuery = $db->query("SELECT * FROM posts");
+        $postQuery = $db->query("SELECT * FROM posts WHERE id=$pid");
 
-        while ($row = $postQuery->fetch_object()) {
-            echo "
-            <div class='col-sm-4 mb-4'>
+        $post = $postQuery->fetch_object();
+        echo "
+            <div class='col-sm-6 mb-4'>
                 <div class='card'>
                     <div class='card-body'>
-                        <h5 class='card-title'>$row->title</h5>
-                        <p class='card-text'>$row->description</p>
-                        <a href='detail.php?post-id=$row->id' class='btn btn-primary'>Go somewhere</a>
-                        <a href='edit.php?post-id=$row->id' class='btn btn-info'>Edit</a>
-                        <a href='delete.php?pid=$row->id' class='btn btn-danger'>Delete</a>
+                        <h5 class='card-title'>$post->title</h5>
+                        <p class='card-text'>$post->description</p>
                     </div>
                 </div>
             </div>
             ";
 
-        }
         ?>
 
 
