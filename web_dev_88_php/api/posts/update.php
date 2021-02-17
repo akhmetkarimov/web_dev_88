@@ -1,6 +1,6 @@
 <?php
 
-    include "database.php";
+include "../../config/database.php";
 
     $edit_title = $_POST['title'];
     $edit_description = $_POST['description'];
@@ -9,4 +9,4 @@
     $db->query("UPDATE posts SET title = '$edit_title', description = '$edit_description' WHERE id = $id;");
 
 
-    header("Location: /web_dev_88_php");
+    header("Location: $BASE_URL");

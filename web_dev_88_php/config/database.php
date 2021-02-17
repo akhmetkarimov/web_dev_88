@@ -7,3 +7,4 @@
         echo $db->connect_error;
     }
 
+    include "urls.php";
