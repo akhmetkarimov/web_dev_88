@@ -5,4 +5,5 @@
     </p>
 </footer>
 
+<?php include "components/modal-windows.php"?>
 <?php include "components/body-libs.php"?>

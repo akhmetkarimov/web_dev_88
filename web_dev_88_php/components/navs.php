@@ -13,7 +13,17 @@
                     <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
                 </svg>
             </a>
-            <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+            
+            <?php
+                if (isset($_SESSION['account'])){
+                    echo '
+                    <a class="btn btn-sm btn-outline-secondary " href="profile.php" style="margin-right: 10px">Profile</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="api/auth/logout.php">Logout</a>';
+                } else {
+                    echo '<a class="btn btn-sm btn-outline-secondary" href="#" data-toggle="modal" data-target="#login-modal" style="margin-right: 10px">Sign in</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#" data-toggle="modal" data-target="#exampleModalCenter">Sign up</a>';
+                }
+            ?>
         </div>
     </div>
 </header>

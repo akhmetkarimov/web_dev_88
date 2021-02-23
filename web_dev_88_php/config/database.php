@@ -8,3 +8,4 @@
     }
 
     include "urls.php";
+    session_start();
