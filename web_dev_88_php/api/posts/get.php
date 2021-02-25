@@ -24,8 +24,11 @@ if (isset($_GET['page'])) {
 
 $postQuery = $db->query(
     "SELECT `posts`.id, `posts`.`title`, `posts`.`description`, `posts`.`time`,`posts`.`views`, 
-    `posts`.`category_id`, `category`.`name` FROM `posts` INNER JOIN `category` ON `posts`.`category_id` = `category`.id
-    ORDER BY $field $order LIMIT $skip, $limit;"
+    `posts`.`category_id`, `category`.`name`, AVG(`reviews`.`mark`) as rating, COUNT(`reviews`.id) as reviewCount,
+    `posts`.poster
+    FROM `posts` INNER JOIN `category` ON `posts`.`category_id` = `category`.id 
+    LEFT OUTER JOIN `reviews` ON `reviews`.`post_id` = `posts`.id 
+    GROUP BY `posts`.id ORDER BY $field $order LIMIT $skip, $limit;"
 );
 
 $pageQuery = $db->query("SELECT COUNT(*) as total FROM `posts`");
@@ -34,9 +37,12 @@ if (isset($_GET['catid']) && $_GET['catid'] != 0) {
     $category_id = $_GET['catid'];
     $postQuery = $db->query(
         "SELECT `posts`.id, `posts`.`title`, `posts`.`description`, `posts`.`time`,`posts`.`views`, 
-        `posts`.`category_id`, `category`.`name` FROM `posts` INNER JOIN `category` ON `posts`.`category_id` = `category`.id
+        `posts`.`category_id`, `category`.`name`, AVG(`reviews`.`mark`) as rating, COUNT(`reviews`.id) as reviewCount,
+        `posts`.poster
+        FROM `posts` INNER JOIN `category` ON `posts`.`category_id` = `category`.id 
+        LEFT OUTER JOIN `reviews` ON `reviews`.`post_id` = `posts`.id 
         WHERE `posts`.category_id = $category_id
-        ORDER BY $field $order LIMIT $skip, $limit;"
+        GROUP BY `posts`.id ORDER BY $field $order LIMIT $skip, $limit"
     );    
     $pageQuery = $db->query("SELECT COUNT(*) as total FROM `posts` WHERE category_id=$category_id;");
 }
@@ -55,6 +61,8 @@ $result = [
 
 if ($postQuery->num_rows > 0) {
     while ($row = $postQuery->fetch_object()) {
+        $row->rating = isset($row->rating) ? number_format($row->rating, 1) : 5;
+        $row->poster = isset($row->poster) ? $row->poster : 'images/posts/post.png';
         array_push($result['posts'], $row);
     }
 }

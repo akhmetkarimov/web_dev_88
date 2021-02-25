@@ -9,7 +9,7 @@ function getAllPosts(page, category) {
     }).done(function(res) {
         res = JSON.parse(res)
         showAllPosts(res.posts, [])
-        showPages(res.totalPages, [])
+        showPages(res.totalPages, [], [])
     })
 }
 
@@ -28,11 +28,11 @@ function showAllPosts(posts, myposts) {
                         </h3>
                         <div class="mb-1 text-muted">${post.time}</div>
                         <p class="card-text mb-auto">${post.description.substr(0, 20)}...</p>
-                        <p> <i class="far fa-eye"></i> ${post.views}  <i class="fas fa-comment"></i> 0  <i class="fas fa-star"></i> 0 </p>
+                        <p> <i class="far fa-eye"></i> ${post.views}  <i class="fas fa-comment"></i> ${post.reviewCount}  <i class="fas fa-star"></i> ${post.rating} </p>
                         <a href="detail.php?post-id=${post.id}">Continue reading</a>
                     </div>
-                    <img class="card-img-right flex-auto d-none d-md-block" src="https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png" alt="Card image cap" width="130">
-                </div>
+                    <img class="card-img-right flex-auto d-none d-md-block" src="${post.poster}" alt="Card image cap" style="width: 130px; object-fit: cover;">
+                    </div>
             </div>
             `
     }
@@ -53,7 +53,7 @@ function showAllPosts(posts, myposts) {
                     <p> <i class="far fa-eye"></i> ${post.views}  <i class="fas fa-comment"></i> 0  <i class="fas fa-star"></i> 0 </p>
                     <a href="detail.php?post-id=${post.id}">Continue reading</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" src="https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png" alt="Card image cap" width="130">
+                <img class="card-img-right flex-auto d-none d-md-block" src="${post.poster}" alt="Card image cap" style="width: 130px; object-fit: cover;">
             </div>
         </div>
         `
@@ -62,8 +62,8 @@ function showAllPosts(posts, myposts) {
     $('#my-posts').html(myPostOutput)
 }
 
-function showPages(pages, mypages) {
-    let output = '', myPostPages = ''
+function showPages(pages, mypages, reviewpages) {
+    let output = '', myPostPages = '', reviewPagesOutput = ''
 
     for (let i = 1; i <= pages; i++) {
         output += `
@@ -80,6 +80,14 @@ function showPages(pages, mypages) {
     }
 
     $('#my-pages').html(myPostPages)
+
+    for (let i = 1; i <= reviewpages; i++) {
+        reviewPagesOutput += `
+        <li class='page-item'><a class='page-link' onclick="showNextReview(${i})">${i}</a></li>
+        `
+    }
+
+    $('#all-pages-reviews').html(reviewPagesOutput)
 
 }
 

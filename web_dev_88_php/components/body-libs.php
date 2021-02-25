@@ -5,3 +5,4 @@
     <script src="js/category.js"></script>
     <script src="js/accounts.js"></script>
     <script src="js/profile.js"></script>
+    <script src="js/reviews.js"></script>

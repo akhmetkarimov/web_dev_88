@@ -1,36 +1,37 @@
 function signUp(e) {
     e.preventDefault()
 
-    const user = {
-        firstName: $('#first-name').val(),
-        lastName: $('#last-name').val(),
-        userName: $('#user-name').val(),
-        email: $('#email').val(),
-        password: $('#password').val(),
-    }
-
     const rePassword = $('#re-password').val()
+    const password = $('#password').val()
 
-    if (user.password !== rePassword) {
+    if (password !== rePassword) {
         return alert('Password not match')
     }
+    let fm = new FormData()
+
+    fm.append('firstName', $('#first-name').val())
+    fm.append('lastName', $('#last-name').val())
+    fm.append('userName', $('#user-name').val())
+    fm.append('email', $('#email').val())
+    fm.append('password', $('#password').val())
+    fm.append('avatar', $('#user-avatar')[0].files[0])
 
     $.ajax({
         url: 'api/auth/signup.php',
-        data: user,
-        method: 'POST'
+        data: fm,
+        method: 'POST',
+        contentType: false,
+        processData: false,
+        enctype: "multipart/form-data",
     }).done(function(res) {
         res = JSON.parse(res)
-        if(res) {
+        if (res) {
             alert('User Created')
-            setTimeout(function(){
-                location.reload()
-            }, 1000)
+            location.reload()
         } else {
             alert('User exist')
         }
     })
-
 
 }
 
@@ -48,11 +49,9 @@ function signIn(e) {
         method: 'POST'
     }).done(function(res) {
         res = JSON.parse(res)
-        if(res.status) {
+        if (res.status) {
             alert('You log In')
-            setTimeout(function(){
-                location.reload()
-            }, 1000)
+            location.reload()
         } else {
             alert(res.error)
         }

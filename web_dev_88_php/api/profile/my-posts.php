@@ -18,7 +18,7 @@ if (isset($_GET['page'])) {
 
 $postQuery = $db->query(
     "SELECT `posts`.id, `posts`.`title`, `posts`.`description`, `posts`.`time`,`posts`.`views`, 
-    `posts`.`category_id`, `category`.`name` FROM `posts` INNER JOIN `category` ON `posts`.`category_id` = `category`.id
+    `posts`.`category_id`, `category`.`name`, `posts`.poster FROM `posts` INNER JOIN `category` ON `posts`.`category_id` = `category`.id
     WHERE `posts`.author_id = $id
     ORDER BY id DESC LIMIT $skip, $limit;"
 );
